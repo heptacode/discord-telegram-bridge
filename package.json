@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "main": "dist/app.js",
   "scripts": {
-    "dev": "rollup -cw",
-    "build": "tsc && rollup -c",
-    "deploy": "git pull && tsc && rollup -c && pm2 start"
+    "dev": "node ./scripts/esbuild.dev.js",
+    "build": "node ./scripts/esbuild.build.js",
+    "deploy": "git pull && node ./scripts/esbuild.build.js && pm2 start"
   },
   "repository": {
     "type": "git",
@@ -19,23 +18,22 @@
   },
   "homepage": "https://github.com/heptacode/discord-telegram-bridge#readme",
   "dependencies": {
-    "chalk": "^4.1.2",
     "discord.js": "13.6",
-    "dotenv": "latest",
-    "node-telegram-bot-api": "latest",
+    "dotenv": "^16",
+    "node-telegram-bot-api": "^0",
+    "picocolors": "^1",
     "pm2": "latest"
   },
   "devDependencies": {
-    "@rollup/plugin-alias": "latest",
-    "@rollup/plugin-json": "latest",
-    "@rollup/plugin-run": "latest",
-    "@rollup/plugin-typescript": "latest",
     "@types/node": "latest",
-    "@types/node-telegram-bot-api": "latest",
-    "rollup": "latest",
+    "@types/node-telegram-bot-api": "^0",
+    "esbuild": "^0",
+    "esbuild-plugin-alias": "^0",
+    "esbuild-plugin-run": "^0",
+    "rollup": "^2",
     "ts-node": "latest",
     "tslib": "latest",
-    "typescript": "latest"
+    "typescript": "^4"
   },
   "packageManager": "yarn@3.2.1"
 }

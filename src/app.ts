@@ -6,7 +6,6 @@ import config from '../env.json';
 
 const client: Client = new Client({ intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_WEBHOOKS'] });
 
-// const webhookClient = new WebhookClient({ id: config.webhook.id, token: config.webhook.token });
 const telegramBot = new TelegramBot(config.telegram.token, { polling: true });
 
 client.login(config.discord.token);
