@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "main": "src/app.ts",
+  "main": "dist/app.js",
   "scripts": {
-    "serve": "nodemon",
-    "tsc": "tsc",
-    "deploy": "tsc && pm2 start --env production && pm2 monit"
+    "dev": "rollup -cw",
+    "build": "tsc && rollup -c",
+    "deploy": "git pull && tsc && rollup -c && pm2 start"
   },
   "repository": {
     "type": "git",
@@ -20,16 +20,22 @@
   "homepage": "https://github.com/heptacode/discord-telegram-bridge#readme",
   "dependencies": {
     "chalk": "^4.1.2",
-    "discord.js": "^13.5.1",
-    "dotenv": "^8.2.0",
-    "node-telegram-bot-api": "^0.56.0",
-    "pm2": "^4.5.6"
+    "discord.js": "13.6",
+    "dotenv": "latest",
+    "node-telegram-bot-api": "latest",
+    "pm2": "latest"
   },
   "devDependencies": {
-    "@types/node": "^14.18.5",
-    "@types/node-telegram-bot-api": "^0.53.6",
-    "nodemon": "^2.0.15",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.5.4"
-  }
+    "@rollup/plugin-alias": "latest",
+    "@rollup/plugin-json": "latest",
+    "@rollup/plugin-run": "latest",
+    "@rollup/plugin-typescript": "latest",
+    "@types/node": "latest",
+    "@types/node-telegram-bot-api": "latest",
+    "rollup": "latest",
+    "ts-node": "latest",
+    "tslib": "latest",
+    "typescript": "latest"
+  },
+  "packageManager": "yarn@3.2.1"
 }
