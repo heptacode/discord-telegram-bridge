@@ -1,17 +1,13 @@
 {
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "esnext",
-    "target": "esnext",
     "moduleResolution": "node",
-    "removeComments": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
     "noEmit": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    }
+    "skipLibCheck": true,
+    "target": "esnext"
   },
-  "include": ["src"],
-  "exclude": [".yarn", "node_modules"]
+  "include": ["src"]
 }

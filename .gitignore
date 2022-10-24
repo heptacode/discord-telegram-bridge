@@ -7,7 +7,7 @@ yarn-error.log*
 
 # Project
 dist
-.env
+.env**
 *.local
 
 # MacOS
@@ -21,6 +21,3 @@ dist
 !.yarn/sdks
 !.yarn/versions
 node_modules
-
-# Custom
-env.json
